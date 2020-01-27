@@ -20,7 +20,7 @@ import lt.vtmc.restApi.model.User;
  *
  */
 @Service
-public class UserService{
+public class UserCreationService{
 
 	@Autowired
 	private UserRepository userRepository;
@@ -48,8 +48,8 @@ public class UserService{
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		newUser.setPassword(encoder.encode(password));
-
 		newUser.setRole("USER");
+		userRepository.save(newUser);
 		return newUser;
 		
 	}
@@ -65,12 +65,10 @@ public class UserService{
 	public User createSystemAdministrator(String username, String password) {
 		User newUser = new User();
 		newUser.setUsername(username);
-
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
-
 		newUser.setPassword(encoder.encode(password));
-
 		newUser.setRole("ADMIN");
+		userRepository.save(newUser);
 		return newUser;
 	}
 

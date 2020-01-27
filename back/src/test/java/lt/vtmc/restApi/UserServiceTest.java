@@ -9,7 +9,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import lt.vtmc.restApi.dao.UserRepository;
 import lt.vtmc.restApi.model.User;
-import lt.vtmc.restApi.service.UserService;
+import lt.vtmc.restApi.service.UserCreationService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserServiceTest {
@@ -22,7 +22,7 @@ public class UserServiceTest {
 	
 	@Test
 	public void testCreateUser() throws Exception {
-		UserService userService = new UserService();
+		UserCreationService userService = new UserCreationService();
 		
 		assertNotNull(userService.createUser("testUser", "testing123"));
 		assertEquals(userService.createUser("testUser", "testing123").getUsername(), "testUser");
@@ -31,7 +31,7 @@ public class UserServiceTest {
 	
 	@Test
 	public void testCreateAdmin() throws Exception {
-		UserService userService = new UserService();
+		UserCreationService userService = new UserCreationService();
 		
 		assertNotNull(userService.createSystemAdministrator("testAdmin", "testing123"));
 		assertEquals(userService.createSystemAdministrator("testAdmin", "testing123").getUsername(), "testAdmin");

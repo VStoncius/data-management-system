@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.vtmc.restApi.dto.CreateUserCommand;
-import lt.vtmc.restApi.service.UserService;
+import lt.vtmc.restApi.service.UserCreationService;
 
 /**
  * Controller for managing system users.
@@ -21,7 +21,7 @@ import lt.vtmc.restApi.service.UserService;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private UserCreationService userService;
 
 	/**
 	 * Creates user with ADMIN role. Only system administrator should be able to

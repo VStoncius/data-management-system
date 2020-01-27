@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import lt.vtmc.restApi.controller.UserController;
 import lt.vtmc.restApi.model.User;
-import lt.vtmc.restApi.service.UserService;
+import lt.vtmc.restApi.service.UserCreationService;
 import lt.vtmc.security.SecurityEntryPoint;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -32,7 +32,7 @@ public class UserControllerTest {
 	private SecurityEntryPoint securityEntryPoint;
 	
 	@MockBean
-	private UserService userService;
+	private UserCreationService userService;
 	
 	@MockBean
 	private User user;
